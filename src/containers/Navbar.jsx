@@ -1,43 +1,37 @@
+import { useEffect, useRef } from "react";
 import reactLogo from "../assets/react.svg";
-import { Link } from "react-router-dom";
-import {
-  HiOutlineHome,
-  HiOutlineChartBar,
-  HiOutlineNewspaper,
-} from "react-icons/hi";
-import DarkModeSwitch from "../components/DarkModeSwitch";
+import NavLinks from "../components/NavLinks";
+import { useSelector, useDispatch } from "react-redux";
+import { mouseEnter, mouseLeave } from "../features/isHoverSlice";
 
 const Navbar = () => {
+  const isHover = useSelector((state) => state.isHover.isHover);
+  const dispatch = useDispatch();
+  const ref = useRef(null);
+
+  useEffect(() => {
+    ref.current.addEventListener("mouseenter", () => {
+      dispatch(mouseEnter());
+    });
+    ref.current.addEventListener("mouseleave", () => {
+      dispatch(mouseLeave());
+    });
+  }, [dispatch]);
+
   return (
-    <div className="mobile-nav sm:desktop-nav sm:pt-4">
-      <div className="mb-8 hidden sm:flex">
-        <img src={reactLogo} className="mr-2" alt="crypto app logo" />
-        <h1 className="font-bold text-lg">Digital Gems</h1>
+    <div
+      className={`bg-green-200 fixed h-20 left-0 max-sm:right-0 bottom-0 sm:top-0 sm:h-screen sm:flex sm:flex-col duration-300 ${
+        isHover ? "sm:w-[250px]" : "sm:w-[70px]"
+      }`}
+      ref={ref}
+    >
+      <div className="hidden mt-4 mb-16 sm:flex sm:items-center">
+        <img src={reactLogo} alt="crypto app logo" className="sm:ml-4" />
+        <h1 className={`${isHover ? "flex" : "hidden"} ml-4 whitespace-nowrap`}>
+          Digital Gems
+        </h1>
       </div>
-      <nav className="w-full flex items-center justify-around sm:h-full sm:flex-col sm:justify-start sm:items-start">
-        <Link
-          to="/"
-          className="flex items-center hover:bg-gray-200 p-4 rounded-full sm:w-full sm:py-4 sm:px-4 sm:rounded-none"
-        >
-          <HiOutlineHome className="sm:mr-2" />
-          <span className="hidden sm:flex">Home</span>
-        </Link>
-        <Link
-          to="/cryptocurrencies"
-          className="flex items-center hover:bg-gray-200 p-4 rounded-full sm:w-full sm:py-4 sm:px-4 sm:rounded-none"
-        >
-          <HiOutlineChartBar className="sm:mr-2" />
-          <span className="hidden sm:flex">Cryptocurrencies</span>
-        </Link>
-        <Link
-          to="/news"
-          className="flex items-center hover:bg-gray-200 p-4 rounded-full sm:w-full sm:py-4 sm:px-4 sm:rounded-none"
-        >
-          <HiOutlineNewspaper className="sm:mr-2" />
-          <span className="hidden sm:flex">News</span>
-        </Link>
-        <DarkModeSwitch />
-      </nav>
+      <NavLinks isHover={isHover} />
     </div>
   );
 };
