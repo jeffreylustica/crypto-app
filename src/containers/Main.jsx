@@ -5,8 +5,8 @@ const Main = () => {
 
   return (
     <div
-      className={`bg-yellow-300 ${
-        isHover ? "sm:ml-[250px]" : "sm:ml-[70px]"
+      className={`${
+        isHover ? "sm:ml-[var(--hovered-nav-width)]" : "sm:ml-[var(--initial-nav-width)]"
       } duration-300`}
     >
       Main

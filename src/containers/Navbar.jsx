@@ -1,27 +1,15 @@
-import { useEffect, useRef } from "react";
 import reactLogo from "../assets/react.svg";
-import NavLinks from "../components/NavLinks";
-import { useSelector, useDispatch } from "react-redux";
-import { mouseEnter, mouseLeave } from "../features/isHoverSlice";
+import { NavLinks } from "../components/index";
+import useHover from "../hooks/useHover";
+
 
 const Navbar = () => {
-  const isHover = useSelector((state) => state.isHover.isHover);
-  const dispatch = useDispatch();
-  const ref = useRef(null);
-
-  useEffect(() => {
-    ref.current.addEventListener("mouseenter", () => {
-      dispatch(mouseEnter());
-    });
-    ref.current.addEventListener("mouseleave", () => {
-      dispatch(mouseLeave());
-    });
-  }, [dispatch]);
+  const [isHover, ref] = useHover()
 
   return (
     <div
-      className={`bg-green-200 fixed h-20 left-0 max-sm:right-0 bottom-0 sm:top-0 sm:h-screen sm:flex sm:flex-col duration-300 ${
-        isHover ? "sm:w-[250px]" : "sm:w-[70px]"
+      className={`bg-gray-200 fixed h-20 left-0 max-sm:right-0 bottom-0 sm:top-0 sm:h-screen sm:flex sm:flex-col duration-300 ${
+        isHover ? "sm:w-[var(--hovered-nav-width)]" : "sm:w-[var(--initial-nav-width)]"
       }`}
       ref={ref}
     >

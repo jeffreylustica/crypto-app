@@ -1,35 +1,46 @@
 import { NavLink } from "react-router-dom";
 import {
-  HiOutlineHome,
-  HiOutlineChartBar,
-  HiOutlineNewspaper,
+  HiOutlineHome, HiHome,
+  HiOutlineChartBar, HiChartBar,
+  HiOutlineNewspaper, HiNewspaper,
 } from "react-icons/hi";
-import DarkModeSwitch from "../components/DarkModeSwitch";
+import { DarkModeSwitch } from "./index"
 
 const NavLinks = ({ isHover }) => {
   const links = [
-    { name: "Home", path: "/", icon: HiOutlineHome },
+    { name: "Home", path: "/", icon: HiOutlineHome, activeIcon: HiHome },
     {
       name: "Cryptocurrencies",
       path: "/cryptocurrencies",
       icon: HiOutlineChartBar,
+      activeIcon: HiChartBar
     },
-    { name: "News", path: "/news", icon: HiOutlineNewspaper },
+    { name: "News", path: "/news", icon: HiOutlineNewspaper, activeIcon: HiNewspaper },
   ];
-  const navLinkStyles = ({ isActive }) => {
-    return isActive ? "font-bold" : "";
-  };
-
+  
   return (
-    <nav className="h-full flex justify-around sm:flex-col">
+    <nav className="h-full flex justify-around items-center sm:items-start sm:flex-col">
       {links.map((link, i) => (
         <NavLink
           key={i}
           to={link.path}
-          className={`${navLinkStyles} flex items-center py-4 pl-4 hover:bg-gray-50`}
+          className={`flex items-center hover:bg-gray-100 p-2 max-sm:rounded-full ${isHover ? "sm:w-[var(--hovered-nav-width)]" : "sm:w-[var(--initial-nav-width)]"} sm:py-4 sm:pl-4`}
         >
-          <link.icon className="text-2xl mr-4" />
-          <span className={`${isHover ? "flex" : "hidden"}`}>{link.name}</span>
+          {(({isActive}) => {
+            return isActive ? <>
+              <link.activeIcon className="text-2xl sm:mr-4" />
+              <span className={`hidden font-bold ${isHover ? "sm:flex" : "sm:hidden"}`}>
+                {link.name}
+              </span>
+            </> : <>
+              <link.icon className="text-2xl sm:mr-4" />
+              <span className={`hidden ${isHover ? "sm:flex" : "sm:hidden"}`}>
+                {link.name}
+              </span>
+            </>
+            })
+          }
+          
         </NavLink>
       ))}
       <DarkModeSwitch />

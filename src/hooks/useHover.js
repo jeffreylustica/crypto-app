@@ -1,21 +1,20 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { mouseEnter, mouseLeave } from "../features/isHoverSlice";
 
 const useHover = () => {
-  const [isHover, setIsHover] = useState(false);
+  const isHover = useSelector(state => state.isHover.isHover)
+  const dispatch = useDispatch()
   const ref = useRef(null);
 
-  const mouseEnter = () => {
-    setIsHover(true);
-  };
-
-  const mouseLeave = () => {
-    setIsHover(false);
-  };
-
   useEffect(() => {
-    ref.current.addEventListener("mouseenter", mouseEnter);
-    ref.current.addEventListener("mouseleave", mouseLeave);
-  }, [isHover]);
+    ref.current.addEventListener("mouseenter", () => {
+      dispatch(mouseEnter());
+    });
+    ref.current.addEventListener("mouseleave", () => {
+      dispatch(mouseLeave());
+    });
+  }, [dispatch]);
 
   return [isHover, ref];
 };

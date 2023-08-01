@@ -1,3 +1,10 @@
 @tailwind base;
+@layer base {
+    :root {
+        --initial-nav-width: 70px;
+        --hovered-nav-width: 250px
+    }
+}
+
 @tailwind components;
 @tailwind utilities;
