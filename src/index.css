@@ -1,9 +1,10 @@
 @tailwind base;
 @layer base {
-    :root {
-        --initial-nav-width: 70px;
-        --hovered-nav-width: 250px
-    }
+  :root {
+    --initial-nav-width: 4.5em;
+    --hovered-nav-width: 15.5em;
+    --mobile-nav-height: 5em;
+  }
 }
 
 @tailwind components;

@@ -16,6 +16,8 @@ export default {
         "text-primary-dark-700": "#154583",
         "text-primary-dark-800": "#0E2E57",
         "text-primary-dark-900": "#07172C",
+
+        "accent-500": "#0EA5E9",
       },
     },
   },

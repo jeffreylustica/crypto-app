@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { Footer } from "./index";
 
 const Main = () => {
   const isHover = useSelector((state) => state.isHover.isHover);
@@ -6,7 +7,9 @@ const Main = () => {
   return (
     <div
       className={`${
-        isHover ? "sm:ml-[var(--hovered-nav-width)]" : "sm:ml-[var(--initial-nav-width)]"
+        isHover
+          ? "sm:ml-[var(--hovered-nav-width)]"
+          : "sm:ml-[var(--initial-nav-width)]"
       } duration-300`}
     >
       Main
@@ -123,6 +126,7 @@ const Main = () => {
         eveniet ipsum amet facilis velit deleniti! Adipisci, temporibus.
         Molestiae, quisquam.
       </p>
+      <Footer />
     </div>
   );
 };
