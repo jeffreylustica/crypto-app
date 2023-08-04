@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ["Open Sans", "sans-serif"],
+        body: ["Nunito Sans", "sans-serif"],
       },
       colors: {
         "text-primary-dark-100": "#D3E3F8",
@@ -18,6 +18,9 @@ export default {
         "text-primary-dark-900": "#07172C",
 
         "accent-500": "#0EA5E9",
+      },
+      gridTemplateColumns: {
+        fluid: "repeat(auto-fit, minmax(200px, 1fr))",
       },
     },
   },

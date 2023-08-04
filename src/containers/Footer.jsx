@@ -20,7 +20,7 @@ const Footer = () => {
         </NavLink>
         <NavLink
           className={({ isActive }) => (isActive ? "text-accent-500" : "")}
-          to={"/News"}
+          to={"/news"}
         >
           News
         </NavLink>

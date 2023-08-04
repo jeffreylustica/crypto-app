@@ -1,9 +1,6 @@
-import { Home } from "../components";
-import { Routes, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { Footer } from "./index";
 
-const Main = () => {
+const Main = ({ children }) => {
   const isHover = useSelector((state) => state.isHover.isHover);
 
   return (
@@ -14,11 +11,7 @@ const Main = () => {
           : "sm:ml-[var(--initial-nav-width)]"
       } duration-300`}
     >
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-      Main
-      <Footer />
+      {children}
     </div>
   );
 };
