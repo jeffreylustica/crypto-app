@@ -20,7 +20,7 @@ export default {
         "accent-500": "#0EA5E9",
       },
       gridTemplateColumns: {
-        fluid: "repeat(auto-fit, minmax(200px, 1fr))",
+        fluid: "repeat(auto-fit, minmax(250px, 1fr))",
       },
     },
   },

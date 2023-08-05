@@ -11,7 +11,7 @@ function App() {
       <Main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/" element={<Cryptocurrencies />} />
+          <Route path="/cryptocurrencies" element={<Cryptocurrencies />} />
           <Route path="/news" element={<News />} />
         </Routes>
 

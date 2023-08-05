@@ -2,7 +2,7 @@ import { Statistic } from "./index";
 
 const CryptoStats = ({ globalStats }) => {
   return (
-    <div>
+    <div className="mb-12">
       <div className="grid gap-4 grid-cols-1 sm:grid-cols-2">
         <Statistic
           title={"Total Cryptocurrencies"}
