@@ -9,6 +9,7 @@ const Cryptocurrencies = ({ simplified }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   console.log(cryptos);
+  console.log(data);
 
   useEffect(() => {
     const filteredData = data?.data.coins.filter((coin) =>
@@ -20,7 +21,7 @@ const Cryptocurrencies = ({ simplified }) => {
   if (isFetching) return "Loading...";
 
   return (
-    <div className="p-2 sm:p-8">
+    <div className="p-2 sm:p-4">
       {!simplified && (
         <>
           <h2 className="font-bold text-lg mb-8">Cryptocurrencies</h2>

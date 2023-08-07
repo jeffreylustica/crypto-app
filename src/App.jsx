@@ -14,7 +14,6 @@ function App() {
           <Route path="/cryptocurrencies" element={<Cryptocurrencies />} />
           <Route path="/news" element={<News />} />
         </Routes>
-
         <Footer />
       </Main>
     </div>

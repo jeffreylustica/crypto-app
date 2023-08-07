@@ -32,11 +32,11 @@ const Home = () => {
         <ShowMore path={"/cryptocurrencies"} />
       </div>
 
-      <div className="mb-12">
+      <div>
         <div className="flex justify-between">
-          <h2 className="font-bold text-lg">Latest Crypto News</h2>
+          <h2 className="font-bold text-lg mb-8">Latest Crypto News</h2>
         </div>
-        <News />
+        <News simplified={true} />
         <ShowMore path={"/news"} />
       </div>
     </div>
