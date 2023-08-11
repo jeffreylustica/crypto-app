@@ -69,7 +69,7 @@ const CryptoDetails = () => {
 
   return (
     <div className="p-2 sm:p-4">
-      <h2>
+      <h2 className="font-bold text-lg mb-8">
         {cryptoDetails.name} ({cryptoDetails.symbol}) Price
       </h2>
       <p>
