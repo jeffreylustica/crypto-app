@@ -15,7 +15,7 @@ export const cryptoApi = createApi({
     prepareHeaders: (headers) => {
       headers.set(
         "X-RapidAPI-Key",
-        "ae40ab90admsh3764cbe080cd3b3p19ac15jsn59ccfc756d52"
+        import.meta.env.VITE_REACT_APP_RAPID_API_KEY
       );
       headers.set("X-RapidAPI-Host", "coinranking1.p.rapidapi.com");
 
