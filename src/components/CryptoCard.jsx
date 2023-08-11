@@ -1,8 +1,12 @@
 import millify from "millify";
+import { Link } from "react-router-dom";
 
 const CryptoCard = ({ coin }) => {
   return (
-    <div className="flex flex-col justify-center gap-4 p-4 bg-gray-100">
+    <Link
+      to={`/crypto/${coin.uuid}`}
+      className="flex flex-col justify-center gap-4 p-4 bg-gray-100"
+    >
       <div className="flex justify-between items-center">
         <div className="font-bold">
           {coin.rank}. {coin.name}
@@ -16,7 +20,7 @@ const CryptoCard = ({ coin }) => {
         <div>Market Cap: {millify(coin.marketCap)}</div>
         <div>Daily Change: {millify(coin.change)}</div>
       </div>
-    </div>
+    </Link>
   );
 };
 

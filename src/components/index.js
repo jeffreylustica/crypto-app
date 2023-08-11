@@ -7,3 +7,5 @@ export { default as CryptoStats } from "./CryptoStats";
 export { default as Statistic } from "./Statistic";
 export { default as ShowMore } from "./ShowMore";
 export { default as CryptoCard } from "./CryptoCard";
+export { default as CryptoDetails } from "./CryptoDetails";
+export { default as LineChart } from "./LineChart";
