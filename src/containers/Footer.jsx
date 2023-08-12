@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="bg-gray-100 flex flex-col justify-end items-center p-4 max-sm:mb-[--mobile-nav-height]">
+    <div className="flex flex-col justify-end items-center p-4 max-sm:mb-[--mobile-nav-height]">
       <h3 className="text-lg font-bold">Digital Gems</h3>
       <p className="mb-4">All rights reserved</p>
       <div className="flex gap-8">

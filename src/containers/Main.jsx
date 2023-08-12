@@ -9,7 +9,7 @@ const Main = ({ children }) => {
         isHover
           ? "sm:ml-[var(--hovered-nav-width)]"
           : "sm:ml-[var(--initial-nav-width)]"
-      } duration-300`}
+      } duration-300 bg-gray-50`}
     >
       {children}
     </div>

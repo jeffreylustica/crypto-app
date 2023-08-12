@@ -43,7 +43,7 @@ const News = ({ simplified }) => {
             <a
               key={i}
               href={news.url}
-              className="p-4 flex flex-col gap-4 shadow-sm border"
+              className="p-4 flex flex-col gap-4 border bg-white hover:shadow-md duration-300"
             >
               <div className="flex justify-between gap-4">
                 <h4 className="text-lg font-bold">{news.name}</h4>
