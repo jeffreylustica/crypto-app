@@ -7,7 +7,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`bg-white shadow-[0_-10px_10px_-5px_rgba(0,0,0,0.1)] sm:shadow-[10px_0_10px_-5px_rgba(0,0,0,0.1)] fixed h-[var(--mobile-nav-height)] left-0 max-sm:right-0 bottom-0 sm:top-0 sm:h-screen sm:flex sm:flex-col duration-300 ${
+      className={`bg-white dark:bg-gray-800 shadow-[0_-10px_10px_-5px_rgba(0,0,0,0.1)] sm:shadow-[10px_0_10px_-5px_rgba(0,0,0,0.1)] fixed h-[var(--mobile-nav-height)] left-0 max-sm:right-0 bottom-0 sm:top-0 sm:h-screen sm:flex sm:flex-col duration-300 ${
         isHover
           ? "sm:w-[var(--hovered-nav-width)]"
           : "sm:w-[var(--initial-nav-width)]"

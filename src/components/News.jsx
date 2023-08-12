@@ -17,23 +17,25 @@ const News = ({ simplified }) => {
   console.log(data?.value);
 
   return (
-    <div className="p-2 sm:p-4">
+    <div className="p-2 sm:p-4 mb-8">
       {!simplified && (
         <h2 className="font-bold text-lg mb-8">Latest Crypto News</h2>
       )}
       {!simplified && (
-        <select
-          className="bg-gray-100 p-2 mb-4"
-          placeholder="Select a Crypto"
-          onChange={(e) => setNewsCategory(e.target.value)}
-        >
-          <option value="Cryptocurrency">Cryptocurrency</option>
-          {coins?.data.coins.map((coin, i) => (
-            <option key={i} value={coin.name}>
-              {coin.name}
-            </option>
-          ))}
-        </select>
+        <div className="flex max-sm:justify-center">
+          <select
+            className="p-2 mb-4 dark:bg-gray-800"
+            placeholder="Select a Crypto"
+            onChange={(e) => setNewsCategory(e.target.value)}
+          >
+            <option value="Cryptocurrency">Cryptocurrency</option>
+            {coins?.data.coins.map((coin, i) => (
+              <option key={i} value={coin.name}>
+                {coin.name}
+              </option>
+            ))}
+          </select>
+        </div>
       )}
       {isFetching ? (
         "Loading..."
@@ -43,7 +45,9 @@ const News = ({ simplified }) => {
             <a
               key={i}
               href={news.url}
-              className="p-4 flex flex-col gap-4 border bg-white hover:shadow-md duration-300"
+              className="p-4 flex flex-col gap-4 border dark:border-none bg-white dark:bg-gray-800 hover:shadow-md duration-300"
+              target="_blank"
+              rel="noreferrer"
             >
               <div className="flex justify-between gap-4">
                 <h4 className="text-lg font-bold">{news.name}</h4>
@@ -53,12 +57,12 @@ const News = ({ simplified }) => {
                   alt="news header image"
                 />
               </div>
-              <p className="text-sm">
+              <p className="text-sm text-gray-500 dark:text-gray-400">
                 {news.description > 20
                   ? `${news.description.substring(0, 20)}...`
                   : news.description}
               </p>
-              <div className="flex items-center text-sm mt-auto gap-4">
+              <div className="flex items-center text-sm mt-auto gap-4 text-gray-500 dark:text-gray-400">
                 <img
                   className="w-8 h-8 object-cover"
                   src={

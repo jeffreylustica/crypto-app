@@ -68,7 +68,7 @@ const CryptoDetails = () => {
   ];
 
   return (
-    <div className="p-2 sm:p-4">
+    <div className="p-2 sm:p-4 min-h-screen">
       <h2 className="font-bold text-lg mb-8">
         {cryptoDetails.name} ({cryptoDetails.symbol}) Price
       </h2>
@@ -77,7 +77,7 @@ const CryptoDetails = () => {
         market cap and supply
       </p>
       <select
-        className="bg-gray-100 p-2 mb-4"
+        className="bg-gray-100 p-2 mb-4 dark:bg-gray-800"
         onChange={(e) => setTimePeriod(e.target.value)}
       >
         {time.map((time) => (

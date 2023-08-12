@@ -32,7 +32,7 @@ const NavLinks = ({ isHover }) => {
         <NavLink
           key={i}
           to={link.path}
-          className={`flex items-center hover:bg-gray-100 p-2 max-sm:rounded-full ${
+          className={`flex items-center hover:bg-gray-100 dark:hover:bg-gray-700 p-2 max-sm:rounded-full ${
             isHover
               ? "sm:w-[var(--hovered-nav-width)]"
               : "sm:w-[var(--initial-nav-width)]"
