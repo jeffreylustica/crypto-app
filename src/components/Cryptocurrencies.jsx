@@ -24,7 +24,7 @@ const Cryptocurrencies = ({ simplified }) => {
     <div className="p-2 sm:p-4 mb-8">
       {!simplified && (
         <>
-          <h2 className="font-bold text-lg mb-8">Cryptocurrencies</h2>
+          <h2 className="font-bold text-4xl mb-8">Cryptocurrencies</h2>
           <div className="flex max-sm:justify-center">
             <input
               className="px-4 py-2 mb-4 min-w-[300px] sm:items-center dark:bg-gray-800"

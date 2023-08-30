@@ -19,12 +19,12 @@ const Home = () => {
 
   return (
     <div className="p-2 sm:p-8">
-      <h2 className="font-bold text-lg">Global Crypto Stats</h2>
+      <h2 className="font-bold text-4xl">Global Crypto Stats</h2>
       <CryptoStats globalStats={globalStats} />
 
       <div className="mb-12">
         <div className="flex justify-between">
-          <h2 className="font-bold text-lg">
+          <h2 className="font-bold text-4xl">
             Top 10 Cryptocurrencies in the world
           </h2>
         </div>
@@ -34,7 +34,7 @@ const Home = () => {
 
       <div>
         <div className="flex justify-between">
-          <h2 className="font-bold text-lg mb-8">Latest Crypto News</h2>
+          <h2 className="font-bold text-4xl mb-8">Latest Crypto News</h2>
         </div>
         <News simplified={true} />
         <ShowMore path={"/news"} />

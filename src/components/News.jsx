@@ -19,7 +19,7 @@ const News = ({ simplified }) => {
   return (
     <div className="p-2 sm:p-4 mb-8">
       {!simplified && (
-        <h2 className="font-bold text-lg mb-8">Latest Crypto News</h2>
+        <h2 className="font-bold text-4xl mb-8">Latest Crypto News</h2>
       )}
       {!simplified && (
         <div className="flex max-sm:justify-center">
