@@ -5,10 +5,10 @@ const CryptoCard = ({ coin }) => {
   return (
     <Link
       to={`/crypto/${coin.uuid}`}
-      className="bg-white dark:bg-gray-800 flex flex-col justify-center gap-4 p-4 border dark:border-gray-700 rounded-lg hover:shadow-md duration-200"
+      className="bg-white dark:bg-gray-800 flex flex-col justify-center gap-4 p-4 border dark:border-gray-700 rounded-lg hover:shadow-md dark:hover:bg-gray-700 duration-200"
     >
       <div className="flex justify-between items-center">
-        <div className="font-bold">
+        <div className="font-bold text-xl">
           {coin.rank}. {coin.name}
         </div>
         <div className="w-12 h-12">

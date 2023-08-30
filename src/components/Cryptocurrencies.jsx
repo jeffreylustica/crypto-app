@@ -21,10 +21,12 @@ const Cryptocurrencies = ({ simplified }) => {
   if (isFetching) return "Loading...";
 
   return (
-    <div className="p-2 sm:p-4 mb-8">
+    <div className="p-2 pt-4 sm:p-4 mb-8">
       {!simplified && (
         <>
-          <h2 className="font-bold text-4xl mb-8">Cryptocurrencies</h2>
+          <h2 className="font-bold text-3xl mb-8 text-accent-500">
+            Cryptocurrencies
+          </h2>
           <div className="flex max-sm:justify-center">
             <input
               className="px-4 py-2 mb-4 min-w-[300px] sm:items-center dark:bg-gray-800"

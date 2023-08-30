@@ -17,9 +17,11 @@ const News = ({ simplified }) => {
   console.log(data?.value);
 
   return (
-    <div className="p-2 sm:p-4 mb-8">
+    <div className="p-2 pt-4 sm:p-4 mb-8">
       {!simplified && (
-        <h2 className="font-bold text-4xl mb-8">Latest Crypto News</h2>
+        <h2 className="font-bold text-3xl mb-8 text-accent-500">
+          Latest Crypto News
+        </h2>
       )}
       {!simplified && (
         <div className="flex max-sm:justify-center">
@@ -45,7 +47,7 @@ const News = ({ simplified }) => {
             <a
               key={i}
               href={news.url}
-              className="p-4 flex flex-col gap-4 border dark:border-none bg-white dark:bg-gray-800 hover:shadow-md duration-300"
+              className="p-4 flex flex-col gap-4 border dark:border-none bg-white dark:bg-gray-800 hover:shadow-md duration-300 dark:hover:bg-gray-700"
               target="_blank"
               rel="noreferrer"
             >

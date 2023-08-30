@@ -68,16 +68,16 @@ const CryptoDetails = () => {
   ];
 
   return (
-    <div className="p-2 sm:p-4 min-h-screen">
-      <h2 className="font-bold text-lg mb-8">
+    <div className="p-2 sm:p-4 min-h-screen mb-4">
+      <h2 className="font-bold text-3xl mb-4 text-accent-500">
         {cryptoDetails.name} ({cryptoDetails.symbol}) Price
       </h2>
-      <p>
+      <p className="text-gray-400 mb-12">
         {cryptoDetails.name} live price in US dollars. View value statistics,
         market cap and supply
       </p>
       <select
-        className="bg-gray-100 p-2 mb-4 dark:bg-gray-800"
+        className="bg-gray-100 p-2 mb-4 dark:bg-gray-800 min-w-[150px]"
         onChange={(e) => setTimePeriod(e.target.value)}
       >
         {time.map((time) => (
@@ -92,45 +92,67 @@ const CryptoDetails = () => {
         coinName={cryptoDetails.name}
       />
 
-      <h2>{cryptoDetails.name} Value Statistics</h2>
-      <p>An overview showing the stats of {cryptoDetails.name}</p>
-
-      <div>
-        {stats.map((stat, i) => (
-          <div key={i} className="bg-yellow-400 flex justify-between">
-            <span>{stat.title} </span>
-            <span>{stat.value}</span>
+      <div className="grid grid-cols-fluid2 gap-32 mt-16">
+        {/* Value Statistics */}
+        <div className="min-w-[300px]">
+          <h2 className="text-accent-500 text-xl font-bold">
+            {cryptoDetails.name} Value Statistics
+          </h2>
+          <p className="text-gray-500 mb-8">
+            An overview showing the stats of {cryptoDetails.name}
+          </p>
+          <div className="flex flex-col gap-4">
+            {stats.map((stat, i) => (
+              <div key={i} className="flex justify-between">
+                <span className="text-gray-400">{stat.title} </span>
+                <span className="font-bold">{stat.value}</span>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
 
-      <h2>{cryptoDetails.name} Other Statistics</h2>
+        {/* Other Statistics */}
+        <div className="min-w-[250px]">
+          <h2 className="text-accent-500 text-xl font-bold">
+            {cryptoDetails.name} Other Statistics
+          </h2>
+          <p className="text-gray-500 mb-8">
+            An overview showing the stats of all cryptocurrencies
+          </p>
 
-      <div>
-        {genericStats.map((stat, i) => (
-          <div key={i} className="bg-pink-400 flex justify-between">
-            <span>{stat.title} </span>
-            <span>{stat.value}</span>
+          <div className="flex flex-col gap-4">
+            {genericStats.map((stat, i) => (
+              <div key={i} className="flex justify-between">
+                <span className="text-gray-400">{stat.title} </span>
+                <span className="font-bold">{stat.value}</span>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
 
-      {/* <div>
-        <h2>What is {cryptoDetails.name}</h2>
-        {HTMLReactParser(cryptoDetails.description)}
-      </div> */}
-
-      <div>
-        <h2>{cryptoDetails.name} Links</h2>
-        <div className="bg-green-400">
-          {cryptoDetails.links.map((link, i) => (
-            <div key={i} className="flex justify-between">
-              <span>{link.type}</span>
-              <a href={link.url} target="_blank" rel="noreferrer">
-                {link.name}
-              </a>
-            </div>
-          ))}
+        {/* Crypto Links */}
+        <div className="min-w-[300px]">
+          <h2 className="text-accent-500 text-xl font-bold">
+            {cryptoDetails.name} Links
+          </h2>
+          <p className="text-gray-500 mb-8">
+            A list showing cryptocurrency links
+          </p>
+          <div className="flex flex-col gap-4">
+            {cryptoDetails.links.map((link, i) => (
+              <div key={i} className="flex justify-between">
+                <span className="text-gray-400">{link.type}</span>
+                <a
+                  href={link.url}
+                  className="font-bold hover:text-accent-500"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {link.name}
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

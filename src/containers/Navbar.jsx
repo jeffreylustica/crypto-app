@@ -19,7 +19,7 @@ const Navbar = () => {
         <h1
           className={`${
             isHover ? "flex" : "hidden"
-          } ml-4 text-lg font-bold whitespace-nowrap`}
+          } ml-4 text-xl font-bold whitespace-nowrap`}
         >
           Digital Gems
         </h1>
