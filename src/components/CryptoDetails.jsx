@@ -21,7 +21,7 @@ const CryptoDetails = () => {
 
   const cryptoDetails = data.data.coin;
 
-  console.log(coinHistory);
+  console.log(cryptoDetails);
 
   const time = ["3h", "24h", "7d", "30d", "1y", "3m", "3y", "5y"];
 
@@ -33,7 +33,9 @@ const CryptoDetails = () => {
     { title: "Rank", value: cryptoDetails.rank },
     {
       title: "24h Volume",
-      value: `$ ${cryptoDetails.volume && millify(cryptoDetails.volume)}`,
+      value: `$ ${
+        cryptoDetails["24hVolume"] && millify(cryptoDetails["24hVolume"])
+      }`,
     },
     {
       title: "Market Cap",
@@ -68,7 +70,7 @@ const CryptoDetails = () => {
   ];
 
   return (
-    <div className="p-2 sm:p-4 min-h-screen mb-4">
+    <div className="p-2 pt-4 sm:p-4 min-h-screen mb-4">
       <h2 className="font-bold text-3xl mb-4 text-accent-500">
         {cryptoDetails.name} ({cryptoDetails.symbol}) Price
       </h2>
