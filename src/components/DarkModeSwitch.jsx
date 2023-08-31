@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { HiMoon, HiSun, HiDesktopComputer, HiChevronUp } from "react-icons/hi";
 

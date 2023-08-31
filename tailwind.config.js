@@ -24,6 +24,12 @@ export default {
         fluid: "repeat(auto-fit, minmax(250px, 1fr))",
         fluid2: "repeat(auto-fit, minmax(300px, 1fr))",
       },
+      keyframes: {
+        "lds-grid": {
+          "0%, 100%": { opacity: "1" },
+          "20%": { opacity: "0.5" },
+        },
+      },
     },
   },
   plugins: [],

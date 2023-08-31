@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom";
 import { useGetCryptosQuery } from "../services/cryptoApi";
-import { CryptoStats, Cryptocurrencies, News, ShowMore } from "./index";
+import { CryptoStats, Cryptocurrencies, News, ShowMore, Loader } from "./index";
 
 const Home = () => {
   const { data, isFetching } = useGetCryptosQuery(10);
@@ -15,7 +14,7 @@ const Home = () => {
   //   total24hVolume: "32532027115",
   // };
 
-  if (!globalStats) return "Loading...";
+  if (isFetching) return <Loader />;
 
   return (
     <div className="p-2 pt-4 sm:p-8">

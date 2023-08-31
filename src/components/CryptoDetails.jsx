@@ -6,7 +6,6 @@ import {
 } from "../services/cryptoApi";
 import millify from "millify";
 import { LineChart } from "./index";
-import HTMLReactParser from "html-react-parser";
 
 const CryptoDetails = () => {
   const { coinId } = useParams();
@@ -53,7 +52,6 @@ const CryptoDetails = () => {
   const genericStats = [
     { title: "Number Of Markets", value: cryptoDetails.numberOfMarkets },
     { title: "Number Of Exchanges", value: cryptoDetails.numberOfExchanges },
-    // { title: 'Aprroved Supply', value: cryptoDetails.supply.confirmed  <CheckOutlined /> : <StopOutlined />, icon: <ExclamationCircleOutlined /> },
     {
       title: "Total Supply",
       value: `$ ${
