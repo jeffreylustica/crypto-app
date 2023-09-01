@@ -1,15 +1,12 @@
 import { useEffect, useState } from "react";
 import { useGetCryptosQuery } from "../services/cryptoApi";
-import { CryptoCard } from "./index";
+import { CryptoCard, Loader } from "./index";
 
 const Cryptocurrencies = ({ simplified }) => {
   const count = simplified ? 10 : 100;
   const { data, isFetching } = useGetCryptosQuery(count);
   const [cryptos, setCryptos] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-
-  console.log(cryptos);
-  console.log(data);
 
   useEffect(() => {
     const filteredData = data?.data.coins.filter((coin) =>
@@ -18,7 +15,7 @@ const Cryptocurrencies = ({ simplified }) => {
     setCryptos(filteredData);
   }, [data, searchTerm]);
 
-  if (isFetching) return "Loading...";
+  if (isFetching) return <Loader />;
 
   return (
     <div className="p-2 pt-4 sm:p-4 mb-8">

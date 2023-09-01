@@ -5,14 +5,6 @@ const Home = () => {
   const { data, isFetching } = useGetCryptosQuery(10);
 
   const globalStats = data?.data.stats;
-  // const globalStats = {
-  //   total: 28315,
-  //   totalCoins: 28315,
-  //   totalMarkets: 37120,
-  //   totalExchanges: 161,
-  //   totalMarketCap: "1178191741868",
-  //   total24hVolume: "32532027115",
-  // };
 
   if (isFetching) return <Loader />;
 

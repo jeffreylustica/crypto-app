@@ -1,4 +1,4 @@
-import reactLogo from "../assets/react.svg";
+import gemLogo from "../assets/gem-logo.svg";
 import { NavLinks } from "../components/index";
 import useHover from "../hooks/useHover";
 
@@ -15,7 +15,11 @@ const Navbar = () => {
       ref={ref}
     >
       <div className="hidden mt-4 mb-16 sm:flex sm:items-center">
-        <img src={reactLogo} alt="crypto app logo" className="sm:ml-4" />
+        <img
+          src={gemLogo}
+          alt="crypto app logo"
+          className="sm:ml-4 w-[40px] h-[46px]"
+        />
         <h1
           className={`${
             isHover ? "flex" : "hidden"

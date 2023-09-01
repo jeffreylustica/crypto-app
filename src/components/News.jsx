@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
-import reactLogo from "../assets/react.svg";
+import gemLogo from "../assets/gem-logo.svg";
 import moment from "moment/moment";
 import { useGetCryptosQuery } from "../services/cryptoApi";
+import { Loader } from "./index";
 
 const News = ({ simplified }) => {
   const [newsCategory, setNewsCategory] = useState("Cryptocurrency");
@@ -12,9 +13,6 @@ const News = ({ simplified }) => {
     count: count,
   });
   const { data: coins } = useGetCryptosQuery(100);
-
-  // if (isFetching) return "Loading...";
-  console.log(data?.value);
 
   return (
     <div className="p-2 pt-4 sm:p-4 mb-8">
@@ -40,7 +38,7 @@ const News = ({ simplified }) => {
         </div>
       )}
       {isFetching ? (
-        "Loading..."
+        <Loader />
       ) : (
         <div className="grid grid-cols-fluid2 gap-8">
           {data?.value.map((news, i) => (
@@ -55,7 +53,7 @@ const News = ({ simplified }) => {
                 <h4 className="text-lg font-bold">{news.name}</h4>
                 <img
                   className="w-16 h-16 object-cover"
-                  src={news?.image?.thumbnail.contentUrl || reactLogo}
+                  src={news?.image?.thumbnail.contentUrl || gemLogo}
                   alt="news header image"
                 />
               </div>
@@ -67,9 +65,7 @@ const News = ({ simplified }) => {
               <div className="flex items-center text-sm mt-auto gap-4 text-gray-500 dark:text-gray-400">
                 <img
                   className="w-8 h-8 object-cover"
-                  src={
-                    news.provider[0].image?.thumbnail.contentUrl || reactLogo
-                  }
+                  src={news.provider[0].image?.thumbnail.contentUrl || gemLogo}
                   alt="news provider logo"
                 />
                 <span>{news.provider[0].name}</span>

@@ -23,15 +23,6 @@ ChartJS.register(
 const LineChart = ({ coinHistory, currentPrice, coinName }) => {
   const coinPrice = [];
   const coinTimestamp = [];
-  // const labels = [
-  //   "January",
-  //   "February",
-  //   "March",
-  //   "April",
-  //   "May",
-  //   "June",
-  //   "July",
-  // ];
 
   const cryptoHistory = coinHistory?.data?.history;
 
@@ -39,20 +30,6 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
     coinPrice.push(history.price);
     coinTimestamp.push(new Date(history.timestamp * 1000).toLocaleDateString());
   });
-
-  // for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
-  //   coinPrice.push(coinHistory?.data?.history[i].price);
-  // }
-
-  // for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
-  //   coinTimestamp.push(
-  //     new Date(
-  //       coinHistory?.data?.history[i].timestamp * 1000
-  //     ).toLocaleDateString()
-  //   );
-  // }
-
-  console.log(coinTimestamp);
 
   const data = {
     labels: coinTimestamp.reverse(),
@@ -75,7 +52,6 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
       },
       title: {
         display: true,
-        // text: "Chart.js Line Chart",
       },
     },
   };
